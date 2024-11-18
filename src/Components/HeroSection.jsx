@@ -5,7 +5,7 @@ import backgroundImage from '../assets/backgroundimg1.jpg';
 import { motion } from 'framer-motion';
 
 const HeroSection = () => {
-  const phoneNumber = '918240284506'; 
+  const phoneNumber = import.meta.env.VITE_PHONE_NUMBER; 
 
   return (
     <Box
@@ -17,8 +17,8 @@ const HeroSection = () => {
       minHeight="100vh"
       sx={{ 
         backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: { xs: 'cover', md: 'contain' }, // Adjusted to contain on larger screens
-        backgroundRepeat: 'no-repeat', // Prevents image repetition
+        backgroundSize: { xs: 'cover', md: 'contain' },
+        backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
         width: '100vw',
         height: '100vh',
