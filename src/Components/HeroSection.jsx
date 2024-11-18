@@ -6,6 +6,12 @@ import { motion } from 'framer-motion';
 
 const HeroSection = () => {
   const phoneNumber = import.meta.env.VITE_PHONE_NUMBER; 
+  const scrollToGallery = () => {
+    const gallerySection = document.getElementById('gallery');
+    if (gallerySection) {
+      gallerySection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <Box
@@ -52,7 +58,7 @@ const HeroSection = () => {
           <Typography
             variant="h2"
             sx={{
-              fontSize: { xs: '1.8rem', md: '4.5rem' },
+              fontSize: { xs: '2.8rem', md: '4.5rem' },
               color: 'white',
               fontWeight: {xs:'800',md: '800'},
               maxWidth: '450px',
@@ -66,63 +72,66 @@ const HeroSection = () => {
             <Box component="span" sx={{ color: '#00239C' }}> for Your Little Treasure</Box>
           </Typography>
         </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.4, delay: 0.5 }}
-          style={{ marginTop: '3rem' }}
-        >
-          <Button
-            variant="contained"
-            color="primary"
-            href={`https://wa.me/${phoneNumber}`}
-            target="_blank"
-            sx={{
-              backgroundColor: '#00239C',
-              fontWeight: 'bold',
-              padding:{xs:'0.6rem 1.5rem',md:'0.8rem 2rem'},
-              fontSize: { xs: '0.9rem', md: '1rem' },
-              borderRadius: '30px',
-              boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.2)',
-              transition: 'transform 0.3s',
-              '&:hover': {
-                backgroundColor: '#ffffff',
-                color:'#00239C',
-                transform: 'scale(1.05)',
-              },
-            }}
-          >
-            Contact on WhatsApp
-          </Button>
-          <Box
-          sx={{
-            mt: 2,
-            py: 1,
-            px: {xs:'1rem',md:'2rem'},
-            backgroundColor: '#00239C', 
-            borderRadius: '30px',
-            display: 'inline-block', 
-            boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.3)',
-          }}
+        <Box
+      display="flex"
+      flexDirection={{ xs: 'column', md: 'row' }} // Column on mobile, row on laptop and above
+      justifyContent="center" // Align the buttons in the center
+      alignItems="center" // Center the buttons vertically
+      sx={{ mt: 3 }} // Margin top for spacing
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.4, delay: 0.5 }}
       >
-        <Typography
-          variant="body1"
+        <Button
+          variant="contained"
+          color="primary"
+          href={`https://wa.me/${phoneNumber}`}
+          target="_blank"
           sx={{
-            fontSize: { xs: '0.9rem', md: '1.2rem' },
-            color: '#FFFFFF',
-            fontFamily: 'Inter, sans-serif',
-            fontWeight: '600',
-            textAlign: 'center',
+            backgroundColor: '#00239C',
+            fontWeight: 'bold',
+            padding: { xs: '0.6rem 1.5rem', md: '0.8rem 2rem' },
+            fontSize: { xs: '1.1rem', md: '1.2rem' },
+            borderRadius: '30px',
+            marginBottom: { xs: '1rem', md: '0' }, // Margin at the bottom for mobile screens
+            marginRight: { md: '1rem' }, // Add spacing between buttons in row on large screens
+            boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.2)',
+            transition: 'transform 0.3s',
+            '&:hover': {
+              backgroundColor: '#ffffff',
+              color: '#00239C',
+              transform: 'scale(1.05)',
+            },
           }}
         >
-          For Appointment Assistance, Call{' '}
-          <Box component="span" sx={{ fontWeight: 'bold', color: '#FFD700' }}>
-            8240284506
-          </Box>
-        </Typography>
-      </Box>
-        </motion.div>
+          Contact on WhatsApp
+        </Button>
+
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={scrollToGallery}
+          sx={{
+            backgroundColor: '#00239C',
+            fontWeight: 'bold',
+            padding: { xs: '0.6rem 1.5rem', md: '0.8rem 2rem' },
+            fontSize: { xs: '1.1rem', md: '1.2rem' },
+            borderRadius: '30px',
+            boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.2)',
+            transition: 'transform 0.3s',
+            '&:hover': {
+              backgroundColor: '#ffffff',
+              color: '#00239C',
+              transform: 'scale(1.05)',
+            },
+          }}
+        >
+          Visit Gallery
+        </Button>
+      </motion.div>
+    </Box>
       </Box>
 
       <motion.div 
@@ -135,8 +144,8 @@ const HeroSection = () => {
           src={doctorImage}
           alt="Doctor"
           sx={{
-            width: { xs: 270, md: 420 },
-            height: { xs: 270, md: 420 },
+            width: { xs: 300, md: 420 },
+            height: { xs: 300, md: 420 },
             boxShadow: '0px 6px 20px rgba(0, 0, 0, 0.3)',
             border: '4px solid white',
           }}
@@ -155,7 +164,7 @@ const HeroSection = () => {
                   color: '#00239C',
                   fontWeight: 'bold',
                   
-                  display: { xs: 'none', md: 'block' },
+                  display: { xs: '', md: 'block' },
                   textAlign: 'center',
                   fontSize: { xs: '1rem', md: '1.7rem' },
                   fontFamily: 'Inter, sans-serif',

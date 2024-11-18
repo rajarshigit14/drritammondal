@@ -1,14 +1,14 @@
 import React from 'react';
-import { Box, Typography, Grid, Card, CardContent } from '@mui/material';
-import { LocalHospital, LocalPharmacy, MedicalServices } from '@mui/icons-material'; // New icons
+import { Box, Typography, Grid, Card, CardContent, IconButton } from '@mui/material';
+import { LocalHospital, LocalPhone, MedicalServices } from '@mui/icons-material'; 
 import { motion } from 'framer-motion';
 
 const ClinicsSection = () => {
   const clinics = [
-    { name: 'Shoishob Pediatric Clinic, Champahati', icon: <MedicalServices /> },
-    { name: 'Remedy Diagnostic, Garia', icon: <MedicalServices /> },
-    { name: 'Welkin, Garia', icon: <MedicalServices />  },
-    { name: 'Apollo Clinic, Baruipur', icon: <MedicalServices />  },
+    { name: 'Shoishob Pediatric Clinic, Champahati', icon: <MedicalServices />, phone: '7477848309' },
+    { name: 'Remedy Diagnostic, Garia', icon: <MedicalServices />, phone: '6292191292' },
+    { name: 'Welkin, Garia', icon: <MedicalServices />, phone: '9239925254'  },
+    { name: 'Apollo Clinic, Baruipur', icon: <MedicalServices /> ,phone: '9903587444'  },
   ];
 
   const hospitals = [
@@ -36,13 +36,43 @@ const ClinicsSection = () => {
               transition={{ type: 'spring', stiffness: 300 }}
             >
               <Card sx={{ boxShadow: 5, borderRadius: 2, backgroundColor: '#EDE7F6', cursor: 'pointer' }}>
-                <CardContent>
-                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-                    <Box sx={{ backgroundColor: '#9C27B0', borderRadius: '50%', padding: 1 }}>
+              <CardContent sx={{ textAlign: 'left', padding: '2rem' }}>
+                  {/* Icon and Name */}
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 2 }}>
+                    <Box
+                      sx={{
+                        backgroundColor: '#9C27B0',
+                        borderRadius: '50%',
+                        padding: 1.5,
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                      }}
+                    >
                       {clinic.icon}
                     </Box>
-                    <Typography variant="h6" sx={{ color: '#9C27B0', fontWeight: 'bold' }}>
+                    <Typography variant="h6" sx={{ color: '#9C27B0', fontWeight: 'bold', flex: 1 }}>
                       {clinic.name}
+                    </Typography>
+                  </Box>
+
+                  {/* Phone Section */}
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      
+                      padding: '0.5rem 1rem',
+                      borderRadius: '20px',
+                      boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)',
+                    }}
+                  >
+                    <LocalPhone sx={{ color: '#9C27B0' }} />
+                    <Typography
+                      variant="body1"
+                      sx={{ marginLeft: '0.5rem', color: '#9C27B0', fontWeight: 'bold' }}
+                    >
+                      {clinic.phone}
                     </Typography>
                   </Box>
                 </CardContent>
