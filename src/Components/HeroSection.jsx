@@ -58,7 +58,7 @@ const HeroSection = () => {
           <Typography
             variant="h2"
             sx={{
-              fontSize: { xs: '2.8rem', md: '4.5rem' },
+              fontSize: { xs: '2.7rem', md: '4.5rem' },
               color: 'white',
               fontWeight: {xs:'800',md: '800'},
               maxWidth: '450px',
@@ -93,7 +93,7 @@ const HeroSection = () => {
             backgroundColor: '#00239C',
             fontWeight: 'bold',
             padding: { xs: '0.6rem 1.5rem', md: '0.8rem 2rem' },
-            fontSize: { xs: '1.1rem', md: '1.2rem' },
+            fontSize: { xs: '1rem', md: '1.1rem' },
             borderRadius: '30px',
             marginBottom: { xs: '1rem', md: '0' }, // Margin at the bottom for mobile screens
             marginRight: { md: '1rem' }, // Add spacing between buttons in row on large screens
@@ -117,7 +117,7 @@ const HeroSection = () => {
             backgroundColor: '#00239C',
             fontWeight: 'bold',
             padding: { xs: '0.6rem 1.5rem', md: '0.8rem 2rem' },
-            fontSize: { xs: '1.1rem', md: '1.2rem' },
+            fontSize: { xs: '1rem', md: '1.1rem' },
             borderRadius: '30px',
             boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.2)',
             transition: 'transform 0.3s',
