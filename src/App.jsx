@@ -7,6 +7,7 @@ import ClinicSection from './Components/ClinicSection';
 import SocialsSection from './Components/SocialsSection';
 import ImageGallery from './Components/ImageGallery';
 import Services from './Components/Services';
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
       <ClinicSection/>
       <ImageGallery/>
       <SocialsSection/>
+      <Analytics />
     </>
   )
 }
